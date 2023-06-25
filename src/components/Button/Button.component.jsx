@@ -1,17 +1,22 @@
 import propTypes from 'prop-types';
 
-import './Button.styles.css';
+import './button.styles.css';
 
-const Button = ({buttonText, handleClick, classNameText}) => {
+const Button = ({ buttonText, handleClick, classNameText }) => {
   return (
-    <button className={classNameText ? classNameText : classNameText = ''} onClick={handleClick}>{buttonText}</button>
-  )
-}
+    <button
+      className={classNameText ? classNameText : (classNameText = '')}
+      onClick={handleClick}
+    >
+      {buttonText}
+    </button>
+  );
+};
 
 Button.propTypes = {
   buttonText: propTypes.string.isRequired,
   handleClick: propTypes.func.isRequired,
-  classNameText: propTypes.string
-}
+  classNameText: propTypes.string,
+};
 
 export default Button;
