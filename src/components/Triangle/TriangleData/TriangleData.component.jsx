@@ -1,0 +1,1 @@
+import ClipboardReader from "./ClipboardReader.component";

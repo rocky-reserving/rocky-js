@@ -1,7 +1,12 @@
 import propTypes from 'prop-types';
 import './triangle.styles.css';
 
+import BlankWindow from '../BlankWindow/BlankWindow.component';
+
 const Triangle = ({ ay, dev, data, captionText, numberType }) => {
+  // ref for the child element
+  // const childRef = useRef(null);
+
   const lenAY = ay.length;
   const lenDev = dev.length;
   const nRows = data.length;
@@ -89,7 +94,10 @@ const Triangle = ({ ay, dev, data, captionText, numberType }) => {
     );
   } else {
     return (
-      <div>
+      <BlankWindow style={
+        {display: 'flex', justifyContent: 'center',
+        justifyItems: 'center', alignItems: 'center'}
+      }>
         <table className="triangle">
           <caption>{captionText ? captionText : ''} </caption>
 
@@ -123,7 +131,7 @@ const Triangle = ({ ay, dev, data, captionText, numberType }) => {
             ))}
           </tbody>
         </table>
-      </div>
+      </BlankWindow>
     );
   }
 };

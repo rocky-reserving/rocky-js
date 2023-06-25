@@ -5,3 +5,14 @@
   text-align: center;
   transition: all 0.2s ease-in-out;
 }
+
+.workbench-main-page {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.workbench-main-page.sidebar-open {
+  grid-template-columns: 15vh 80fr;
+}
