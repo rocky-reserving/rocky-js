@@ -13,6 +13,8 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "autoprefixer": "^10.4.14",
+    "crypto-js": "^4.1.1",
+    "cryptojs": "^2.5.3",
     "hamburger-react": "^2.5.0",
     "postcss": "^8.4.24",
     "re-resizable": "^6.9.9",
@@ -29,6 +31,7 @@
     "vercel": "^30.2.3"
   },
   "devDependencies": {
+    "@types/crypto-js": "^4.1.1",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^4.0.0",

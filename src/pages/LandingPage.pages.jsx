@@ -1,30 +1,47 @@
+import { AES } from 'crypto-js/aes';
+
 import propTypes from 'prop-types';
 import Button from '../components/Button/Button.component';
-import Navbar from "../components/Navbar/Navbar.component";
+import Navbar from '../components/Navbar/Navbar.component';
 
-const LandingPage = ({page, setPage}) => {
+const LandingPage = ({ page, setPage }) => {
+  const message = 'this is a message';
+  console.log(message);
+  const encrypted = AES.encrypt(message, 'Secret Passphrase').toString();
+  console.log(encrypted);
+  const decrypted = AES.decrypt(encrypted, 'Secret Passphrase').toString();
+  console.log(decrypted);
+
   return (
     <>
-      {(page === 'landing') && (
+      {page === 'landing' && (
         <>
-          <Navbar setPage={setPage}/>
-          <header className='main-landing-container'>
+          <Navbar setPage={setPage} />
+          <header className="main-landing-container">
             <h1>rocky</h1>
-            <div className="main-landing-buttons p-[5px]"> 
-              <Button buttonText={"Start"} handleClick={() => setPage('workbench')}/>
-              <Button buttonText={"Settings"} handleClick={() => setPage('settings')}/>
-              <Button buttonText={"Docs"} handleClick={() => setPage('docs')}/>
+            <p>Message: {message}</p>
+
+            <div className="main-landing-buttons p-[5px]">
+              <Button
+                buttonText={'Start'}
+                handleClick={() => setPage('workbench')}
+              />
+              <Button
+                buttonText={'Settings'}
+                handleClick={() => setPage('settings')}
+              />
+              <Button buttonText={'Docs'} handleClick={() => setPage('docs')} />
             </div>
           </header>
         </>
       )}
     </>
   );
-}
+};
 
 LandingPage.propTypes = {
   page: propTypes.string.isRequired,
-  setPage: propTypes.func.isRequired
-}
+  setPage: propTypes.func.isRequired,
+};
 
 export default LandingPage;
