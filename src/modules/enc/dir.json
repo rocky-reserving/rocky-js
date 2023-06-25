@@ -1,0 +1,10 @@
+{
+  "surface": {
+    "public": "../../utils/enc/L-public.pem",
+    "private": "/home/etc/private.pem"
+  },
+  "work": {
+    "public": "/mnt/c/users/aweaver/",
+    "private": "/home/etc/private.pem"
+  }
+}
