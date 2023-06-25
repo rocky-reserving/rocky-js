@@ -1,7 +1,7 @@
 import propTypes from 'prop-types';
 import './triangle.styles.css';
 
-const Triangle = ({ay, dev, data, captionText, numberType}) => {
+const Triangle = ({ ay, dev, data, captionText, numberType }) => {
   const lenAY = ay.length;
   const lenDev = dev.length;
   const nRows = data.length;
@@ -38,23 +38,40 @@ const Triangle = ({ay, dev, data, captionText, numberType}) => {
       default:
         return 'currency';
     }
-  }
+  };
 
   // format the number according to the numberType
   const formatNumber = (number, numberType) => {
     switch (mapNumberType(numberType)) {
       case 'currency':
-        return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0 }).format(number);
+        return new Intl.NumberFormat('en-US', {
+          style: 'currency',
+          currency: 'USD',
+          minimumFractionDigits: 0,
+        }).format(number);
       case 'percent':
-        return new Intl.NumberFormat('en-US', { style: 'percent', minimumFractionDigits: 1 }).format(number);
+        return new Intl.NumberFormat('en-US', {
+          style: 'percent',
+          minimumFractionDigits: 1,
+        }).format(number);
       case 'factor':
-        return new Intl.NumberFormat('en-US', { style: 'decimal', minimumFractionDigits: 3 }).format(number);
+        return new Intl.NumberFormat('en-US', {
+          style: 'decimal',
+          minimumFractionDigits: 3,
+        }).format(number);
       case 'year':
-        return new Intl.NumberFormat('en-US', { style: 'decimal', minimumFractionDigits: 0 }).format(number);
+        return new Intl.NumberFormat('en-US', {
+          style: 'decimal',
+          minimumFractionDigits: 0,
+        }).format(number);
       default:
-        return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0 }).format(number);
+        return new Intl.NumberFormat('en-US', {
+          style: 'currency',
+          currency: 'USD',
+          minimumFractionDigits: 0,
+        }).format(number);
     }
-  }
+  };
 
   // validate that lenAY = nRows and lenDev = nCols
   if (lenAY !== nRows || lenDev !== nCols) {
@@ -69,57 +86,54 @@ const Triangle = ({ay, dev, data, captionText, numberType}) => {
         <p>lenDev: {lenDev}</p>
         <p>nCols: {nCols}</p>
       </div>
-    )
+    );
   } else {
     return (
       <div>
-        <table className='triangle'>
-          <caption>{captionText ? captionText : ""} </caption>
+        <table className="triangle">
+          <caption>{captionText ? captionText : ''} </caption>
 
           {/* tringle header - blank space then development periods*/}
-          <thead className='triangle-header'>
-            <tr className='triangle-header-row'>
+          <thead className="triangle-header">
+            <tr className="triangle-header-row">
               {/* top left corner */}
-              <th className='triangle-header'>&nbsp;</th> 
-              {
-                dev.map((col, i) => (
-                  <th key={i} className='triangle-header'>{formatNumber(col, 'year')}</th>
-                ))
-              }
+              <th className="triangle-header">&nbsp;</th>
+              {dev.map((col, i) => (
+                <th key={i} className="triangle-header">
+                  {formatNumber(col, 'year')}
+                </th>
+              ))}
             </tr>
           </thead>
 
           {/* triangle body */}
           <tbody>
-            
             {/* loop through all rows after the first */}
             {data.map((row, i) => (
               <tr key={i}>
-                <td className='triangle-ay'>{formatNumber(ay[i], 'y')}</td>
-                {row.map((col, j) => (
-                    (
-                      isNaN(col) ? 
-                      (<td key={j}>&nbsp;</td>) :
-                      (<td key={j}>{formatNumber(col, numberType)}</td>)
-                    )
-                  ))
-                }
+                <td className="triangle-ay">{formatNumber(ay[i], 'y')}</td>
+                {row.map((col, j) =>
+                  isNaN(col) ? (
+                    <td key={j}>&nbsp;</td>
+                  ) : (
+                    <td key={j}>{formatNumber(col, numberType)}</td>
+                  ),
+                )}
               </tr>
-              )
-            )}
+            ))}
           </tbody>
         </table>
       </div>
-    )
+    );
   }
-}
+};
 
 Triangle.propTypes = {
   ay: propTypes.array.isRequired,
   dev: propTypes.array.isRequired,
   data: propTypes.arrayOf(propTypes.arrayOf(propTypes.number)).isRequired,
   captionText: propTypes.string,
-  numberType: propTypes.string
-}
+  numberType: propTypes.string,
+};
 
 export default Triangle;
