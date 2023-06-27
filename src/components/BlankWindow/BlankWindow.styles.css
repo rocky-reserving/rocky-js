@@ -1,3 +1,9 @@
+.total-window {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .window {
 	background-color: white;
 	border-radius: 10px;
@@ -6,6 +12,7 @@
 	border-width: 1px;
   position: absolute;
   opacity: 0.95;
+	
 }
 
 .window-open {
@@ -87,7 +94,7 @@
   border-style: solid;
   border-width: 1px;
   justify-items: center;
-	transition: all 0.25s ease-in-out;
+	transition: all 0.1s ease-in-out;
 	font-size: 1.5em;
 	display: flex;
 	align-items: center;

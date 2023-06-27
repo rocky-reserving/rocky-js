@@ -21,9 +21,14 @@ import './App.css'
 ]
 
 function App() {
+  // state vars for page navigation
   const [page, setPage] = useState('landing');
   const [curPage, setCurPage] = useState('landing');
+
+  // state vars for maintaining models and triangles in memory
+  const [workbenchState, setWorkbenchState] = useState([]);
   
+  // state vars for maintaining rocky state
   // const [rky, setRky] = useState(rockyState);
 
   // validate that the selected page is in the list of all pages
@@ -41,7 +46,12 @@ function App() {
   return (
     <>
       <LandingPage page={page} setPage={setPage} />
-      <Workbench page={page} setPage={setPage} />
+      <Workbench
+        page={page}
+        setPage={setPage}
+        workbenchState={workbenchState}
+        setWorkbenchState={setWorkbenchState} 
+      />
       <Settings page={page} setPage={setPage} />
       <Documentation page={page} setPage={setPage} />
     </>

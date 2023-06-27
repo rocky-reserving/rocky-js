@@ -13,7 +13,6 @@ const Navbar = ({setPage}) => {
 
     // get the navbar item's page value from the json file
     const newPage = navbarData['navbarData'][navIDNum]['page']
-    console.log(newPage)
 
     // set the page state to the new page
     setPage(newPage)

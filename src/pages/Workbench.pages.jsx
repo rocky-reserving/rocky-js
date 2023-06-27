@@ -1,17 +1,19 @@
 import propTypes from 'prop-types';
 import Navbar from "../components/Navbar/Navbar.component";
 import BlankWindow from "../components/BlankWindow/BlankWindow.component";
+import Button from "../components/Button/Button.component";
 
-const Workbench = ({page, setPage}) => {
+const Workbench = ({page, setPage, workbenchState, setWorkbenchState}) => {
+  
   return (
     <>
       {(page === 'workbench') && (
         <>
       <Navbar setPage={setPage} />
       <div>
-      <BlankWindow windowType={"loadData"}/>
-      <h1>Workbench</h1>
+        <Button buttonText={"Add Triangle"} handleClick={() => console.log('added triangle')} />
       </div>
+        <BlankWindow windowType={"loadData"}/>
       </>
       )}
     </>
@@ -20,7 +22,9 @@ const Workbench = ({page, setPage}) => {
 
 Workbench.propTypes = {
   page: propTypes.string.isRequired,
-  setPage: propTypes.func.isRequired
+  setPage: propTypes.func.isRequired,
+  workbenchState: propTypes.array.isRequired,
+  setWorkbenchState: propTypes.func.isRequired
 }
 
 export default Workbench;

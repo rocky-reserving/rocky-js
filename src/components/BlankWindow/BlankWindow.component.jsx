@@ -25,6 +25,8 @@ const BlankWindow = ({
 	const [isMinimized, setIsMinimized] = useState(startMinimized);
 	const [isFullScreen, setIsFullScreen] = useState(false);
 	const [isVisable, setIsVisable] = useState(true);
+	const [curTitle, setCurTitle] = useState(title || 'window'); // eslint-disable-line
+	const [newTitle, setNewTitle] = useState(title || 'window');
 
 	const handleMinimize = () => {
 		setIsMinimized(!isMinimized);
@@ -39,6 +41,17 @@ const BlankWindow = ({
 	const handleClose = () => {
 		setIsVisable(false);
 	};
+
+	const handleEditText = (e) => {
+		e.preventDefault();
+		setNewTitle(prompt('Enter new title', curTitle));
+	};
+
+	useEffect(() => {
+		if (newTitle) {
+			setCurTitle(newTitle);
+		}
+	}, [newTitle]);
 
 	useEffect(() => {
 		if (setTriangleStyle) {
@@ -81,11 +94,11 @@ const BlankWindow = ({
 				className={`window ${isMinimized ? 'window-closed' : 'window-open'}`}
 				>
 				<div
-					className={`window-header
+					className={`window-header 
             ${isMinimized ? 'window-header-closed' : 'window-header-open'}
             ${windowTypes[windowType] ||'window-header-default'}`}
 					>
-					<span className="window-title">{title || 'window'}</span>
+					<span className="window-title" onDoubleClick={handleEditText}>{curTitle || 'window'}</span>
 					<span className='window-buttons'>
 						<button className="min-max-button window-button" onClick={handleMinimize}>
 							{isMinimized ? '+' : '-'}
@@ -98,7 +111,9 @@ const BlankWindow = ({
 						</button>
 					</span>
 				</div>
-				{renderContent()}
+				<div className="total-window">
+					{renderContent()}
+				</div>
 			</div>
 		</Draggable>
 	);

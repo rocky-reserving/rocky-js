@@ -3,6 +3,5 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  transition: all 0.2s ease-in-out;
 }
-
-@url("file://./components/Navbar/navbar.styles.css");
