@@ -1,4 +1,5 @@
 import propTypes from 'prop-types';
+import Button from '../components/Button/Button.component';
 import Navbar from "../components/Navbar/Navbar.component";
 
 const LandingPage = ({page, setPage}) => {
@@ -10,9 +11,9 @@ const LandingPage = ({page, setPage}) => {
           <header className='main-landing-container'>
             <h1>rocky</h1>
             <div className="main-landing-buttons p-[5px]"> 
-              <button className="main-landing-button">Start</button>
-              <button className="main-landing-button">Settings</button>
-              <button className="main-landing-button">Docs</button>
+              <Button buttonText={"Start"} handleClick={() => setPage('workbench')}/>
+              <Button buttonText={"Settings"} handleClick={() => setPage('settings')}/>
+              <Button buttonText={"Docs"} handleClick={() => setPage('docs')}/>
             </div>
           </header>
         </>

@@ -79,27 +79,24 @@ const BlankWindow = ({
 		<Draggable handle=".window-header">
 			<div
 				className={`window ${isMinimized ? 'window-closed' : 'window-open'}`}
-			>
-				<div
-					className={`
-            window-header
-            ${isMinimized ? 'window-header-closed' : 'window-header-open'}
-            ${
-							windowTypes[windowType] ||
-							'window-header-default' /*different colors for different window types*/
-						} 
-            `}
 				>
+				<div
+					className={`window-header
+            ${isMinimized ? 'window-header-closed' : 'window-header-open'}
+            ${windowTypes[windowType] ||'window-header-default'}`}
+					>
 					<span className="window-title">{title || 'window'}</span>
-					<button className="min-max-button window-button" onClick={handleMinimize}>
-						{isMinimized ? '+' : '-'}
-					</button>
-					<button className="fullscreen-button window-button" onClick={handleFullScreen}>
-						{isFullScreen ? '↙' : '⤢'}
-					</button>
-					<button className="close-button window-button" onClick={handleClose}>
-						{'×'}
-					</button>
+					<span className='window-buttons'>
+						<button className="min-max-button window-button" onClick={handleMinimize}>
+							{isMinimized ? '+' : '-'}
+						</button>
+						<button className="fullscreen-button window-button" onClick={handleFullScreen}>
+							{isFullScreen ? '↙' : '⤢'}
+						</button>
+						<button className="close-button window-button" onClick={handleClose}>
+							{'×'}
+						</button>
+					</span>
 				</div>
 				{renderContent()}
 			</div>

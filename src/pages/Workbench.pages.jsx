@@ -1,7 +1,6 @@
 import propTypes from 'prop-types';
 import Navbar from "../components/Navbar/Navbar.component";
 import BlankWindow from "../components/BlankWindow/BlankWindow.component";
-// import Sidebar from "../components/Sidebar.component";
 
 const Workbench = ({page, setPage}) => {
   return (
