@@ -1,0 +1,81 @@
+{
+  "navbarData": [
+    {
+      "id": 0,
+      "name": "|",
+      "img": null,
+      "page": null,
+      "classes": []
+    },
+    {
+      "id": 1,
+      "name": "rocky",
+      "img": "/vite.svg",
+      "page": "landing",
+      "classes": []
+    },    
+    {
+      "id": 2,
+      "name": "|",
+      "img": null,
+      "link": null,
+      "classes": []
+    },
+    {
+      "id": 3,
+      "name": "New Model",
+      "img": null,
+      "page": "workbench",
+      "classes": []
+    },
+    {
+      "id": 4,
+      "name": "|",
+      "img": null,
+      "page": null,
+      "classes": []
+    },
+    {
+      "id": 5,
+      "name": "Load Model",
+      "img": null,
+      "page": "workbench",
+      "classes": []
+    },
+    {
+      "id": 6,
+      "name": "|",
+      "img": null,
+      "page": null,
+      "classes": []
+    },
+    {
+      "id": 7,
+      "name": "Settings",
+      "img": null,
+      "page": "settings",
+      "classes": []
+    },
+    {
+      "id": 8,
+      "name": "|",
+      "img": null,
+      "link": null,
+      "classes": []
+    },
+    {
+      "id": 9,
+      "name": "Documentation",
+      "img": null,
+      "page": "docs",
+      "classes": []
+    },
+    {
+      "id": 10,
+      "name": "|",
+      "img": null,
+      "link": null,
+      "classes": []
+    }
+  ]
+}

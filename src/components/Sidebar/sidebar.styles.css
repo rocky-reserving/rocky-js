@@ -1,0 +1,12 @@
+  .sidebar {
+    height: 100vh;
+    background-color: #2d3748;
+    align-items: center;
+    position: absolute;
+    transition: all 0.1s linear;
+    width: 50px;
+  }
+
+  .sidebar.sidebar-open {
+    width: 15vh;
+  }

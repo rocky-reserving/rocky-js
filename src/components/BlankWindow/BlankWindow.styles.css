@@ -1,0 +1,84 @@
+.window {
+	background-color: white;
+	border-radius: 10px;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+  position: absolute;
+  opacity: 0.95;
+}
+
+.window-open {
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+}
+
+.window-open:hover {
+	filter: drop-shadow(0 0 1em #646cff);
+	transition: filter 200ms 100ms;
+}
+
+.window-closed {
+	height: 40px;
+	border-radius: 10px;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+}
+
+.window-closed:hover {
+	filter: drop-shadow(0 0 1em #646cff);
+	transition: filter 200ms 100ms;
+}
+
+.window-header {
+	height: 40px;
+}
+.window-header-default {
+	background-color: grey;
+}
+
+.window-header-load-data {
+	background-color: rgba(202, 57, 57, 0.8);
+}
+
+.window-header-model-selection {
+	background-color: rgba(200, 200, 0, 0.8);
+}
+
+.window-header-model-validation {
+	background-color: rgba(0, 145, 0, 0.8);
+}
+
+.window-header-open {
+	border-radius: 10px 10px 0 0;
+}
+
+.window-header-closed {
+	border-radius: 10px;
+}
+
+.window-title {
+	color: white;
+	font-weight: bold;
+}
+
+.window-button {
+  height: 40px;
+  width: 40px;
+  border-radius: 10px;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  justify-items: center;
+}
+
+/* .min-max-button,
+.fullscreen-button,
+.close-button {
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+  justify-self: right;
+} */
