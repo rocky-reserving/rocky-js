@@ -1,7 +1,6 @@
 import propTypes from 'prop-types';
 import Navbar from "../components/Navbar/Navbar.component";
-import Triangle from '../components/Triangle/Triangle.component';
-import BlankWindow from '../components/BlankWindow/BlankWindow.component';
+// import Triangle from '../components/Triangle/Triangle.component';
 
 const Settings = ({page, setPage}) => {
   return (
@@ -10,9 +9,7 @@ const Settings = ({page, setPage}) => {
         <>
           <Navbar setPage={setPage}/>
           <h1>Settings</h1>
-          <BlankWindow>
-            <Triangle ay={[0,1,2]} dev={[12,24,36]} data={[[0,1,2],[3,4,NaN],[6,NaN,NaN]]}/>
-          </BlankWindow>
+          {/* <Triangle ay={[0,1,2,3]} dev={[12,24,36,48]} data={[[0,1,2,3],[3,4,5,NaN],[6,7,NaN,NaN],[8,NaN,NaN,NaN]]}/> */}
           
         </>
       )}

@@ -1,7 +1,13 @@
 .total-window {
+	height: 100%;
+	width: 100%;
 	display: flex;
+	align-self: center;
+	justify-self: center;
 	align-items: center;
 	justify-content: center;
+	align-content: center;
+	
 }
 
 .window {
@@ -104,4 +110,12 @@
 .window-button:hover {
 	transform: scale(1.03);
 	box-shadow: inset 0 0 1em #096616;
+}
+
+.window-title-input {
+	margin-left: 10px;
+	color: white;
+	font-weight: bold;
+	width: 100%;
+	padding: 0;
 }

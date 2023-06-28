@@ -3,7 +3,7 @@ import {useEffect, useState} from 'react';
 import SidebarHeader from "./SidebarHeader.component";
 import SidebarList from "./SidebarList.component";
 
-import './sidebar/sidebar.styles.css';
+import './sidebar.styles.css';
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);

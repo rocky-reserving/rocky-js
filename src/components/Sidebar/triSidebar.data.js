@@ -1,7 +1,7 @@
 // import { GiBoxingGlove } from "react-icons/gi";
 
-const triSidebarData = (rockyState) => {
-  const sidebarData = {
+const triSidebarData = {
+  "sidebarData": {
     "items": [
       {
         "id": 1,
@@ -61,20 +61,20 @@ const triSidebarData = (rockyState) => {
         "children": []
       },
     ]
-  };
-
-  if(rockyState.tri.hasTri) {
-    rockyState.tri.data.forEach((triangle, index) => {
-      let triangleItem = {
-        "id": 1000 + index,
-        "title": triangle.name,
-        "tri": triangle,
-      };
-    sidebarData.items[1].children.push(triangleItem);
-    })
   }
 
-  return sidebarData;
+  // if(rockyState.tri.hasTri) {
+  //   rockyState.tri.data.forEach((triangle, index) => {
+  //     let triangleItem = {
+  //       "id": 1000 + index,
+  //       "title": triangle.name,
+  //       "tri": triangle,
+  //     };
+  //   sidebarData.items[1].children.push(triangleItem);
+  //   })
+  // }
+
+  // return sidebarData;
 }
 
 export default triSidebarData;

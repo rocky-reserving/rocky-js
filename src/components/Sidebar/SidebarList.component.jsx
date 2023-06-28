@@ -1,6 +1,6 @@
 import propTypes from "prop-types";
 
-// import SidebarListData from "./triSidebar.data";
+import triSidebarData from "./triSidebar.data";
 // import { v4 as uuidv4 } from 'uuid';
 
 
@@ -17,35 +17,21 @@ const SidebarList = ({isOpen}) => {
   console.log(isOpen)
 
   return (
-    <div id="sidebar-list" className='mt-5'>
-      {/*<ul key={uuidv4()} className='flex flex-col'>
-        {SidebarListData.map((item, index) => {
-          return (
-            <>
-            {(item['type'] === "list") && (
-              <li key={'li-' + index} alt={item['data']['alt']} className={`hover:bg-gradient-radial mb-4 justify-items-center ${isOpen ? "pl-3" : "pl-1"}`}>
-                {isOpen ? (
-                  <button key={'button-' + index} className='grid grid-cols-[1fr_5fr] justify-between' onClick={() => sidebarClick(item['data']['args']['click'])}>
-                    <span key={'sidebar-icon-' + index} className='col-span-1'>{item['data']['icon']==="NONE" ? "" : item['data']['icon']}</span>
-                    <span key={'sidebar-list-item-' + index} className='text-black pl-3 pr-3 col-auto hover:text-slate-700'>{item['data']['name']}</span>
-                  </button>
-                ) : (
-                  <button key={'button-' + index} className='grid grid-cols-[1fr_5fr] justify-between' onClick={() => sidebarClick(item['data']['args']['click'])}>
-                    <span key={'sidebar-icon-' + index} className='col-span-1'>{item['data']['icon']==="NONE" ? "" : item['data']['icon']}</span>
-                  </button>
-                )}
-                
-              </li>
-            )}
-            {(item['type'] === "divider") && (
-              <li key={'li-' + index} className='flex flex-auto flex-row shadow-sm hover:bg-gradient-radial pl-3 pr-3 mb-4'>
-                <span key={'divider-' + index} className='text-black pl-3 pr-3 text-9xl'><hr /></span>
-              </li>
-            )}
-            </>
-          )
-        })}
-        </ul>*/}
+    <div id="sidebar-list">
+      <ul>
+        {triSidebarData["sidebarData"]["items"].map(({id, type, text, icon}) => (
+          <li key={id} onClick={() => console.log(`${type} sidebar click`)}>
+            <div className="sidebar-list-item">
+              <div className="sidebar-list-item-icon">
+                {icon}
+              </div>
+              <div className="sidebar-list-item-text">
+                {text}
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
