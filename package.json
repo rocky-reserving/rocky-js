@@ -13,8 +13,11 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "autoprefixer": "^10.4.14",
+    "buffer": "^6.0.3",
+    "crypto": "^1.0.1",
     "crypto-js": "^4.1.1",
     "cryptojs": "^2.5.3",
+    "fs": "^0.0.1-security",
     "hamburger-react": "^2.5.0",
     "postcss": "^8.4.24",
     "re-resizable": "^6.9.9",

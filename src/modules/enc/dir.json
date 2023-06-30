@@ -4,7 +4,7 @@
     "private": "/home/etc/private.pem"
   },
   "work": {
-    "public": "/mnt/c/users/aweaver/",
-    "private": "/home/etc/private.pem"
+    "public": "../../utils/enc/W-public.pem",
+    "private": "/c/Users/aweaver/Documents/.etc/private.pem"
   }
 }

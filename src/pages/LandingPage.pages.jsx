@@ -1,4 +1,4 @@
-import { AES } from 'crypto-js/aes';
+import { encryptObject } from '../modules/enc/encryption';
 
 import propTypes from 'prop-types';
 import Button from '../components/Button/Button.component';
@@ -6,11 +6,8 @@ import Navbar from '../components/Navbar/Navbar.component';
 
 const LandingPage = ({ page, setPage }) => {
   const message = 'this is a message';
-  console.log(message);
-  const encrypted = AES.encrypt(message, 'Secret Passphrase').toString();
+  const encrypted = encryptObject(JSON.stringify(message), 'l');
   console.log(encrypted);
-  const decrypted = AES.decrypt(encrypted, 'Secret Passphrase').toString();
-  console.log(decrypted);
 
   return (
     <>
